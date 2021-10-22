@@ -1,25 +1,21 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-// const FirstComponent = () => {
-//     return (
-//         <>
-//             <h1>Hello World!</h1>
-//             <p>This is the fist component.</p>
-//         </>
-//     )
-// };
+const Hello = () => <h1>Hello World!</h1> //stateless functional component, implicit return
 
-// const SecondComponent = () => {
-//     return React.createElement('h1', null, 'Hello World!');
-// }
+//stateless functional component, explicit return
+const Description = () => {
+    return <p>This is the fist component.</p>
+};
 
-const ThirdComponent = () => { // nested elements
-    return React.createElement(
-        'div',
-        null,
-        React.createElement('h1', null, 'Hello World3!')
-    );
-}
+//Nested component structure
+const Greeting = () => {
+    return (
+        <>
+            <Hello/>
+            <Description/>
+        </>
+    )
+};
 
-ReactDom.render(<ThirdComponent/>, document.getElementById('root'));
+ReactDom.render(<Greeting/>, document.getElementById('root'));

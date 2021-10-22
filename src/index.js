@@ -10,8 +10,16 @@ import ReactDom from 'react-dom';
 //     )
 // };
 
-const SecondComponent = () => {
-    return React.createElement('h1', null, 'Hello World!');
+// const SecondComponent = () => {
+//     return React.createElement('h1', null, 'Hello World!');
+// }
+
+const ThirdComponent = () => { // nested elements
+    return React.createElement(
+        'div',
+        null,
+        React.createElement('h1', null, 'Hello World3!')
+    );
 }
 
-ReactDom.render(<SecondComponent/>, document.getElementById('root'));
+ReactDom.render(<ThirdComponent/>, document.getElementById('root'));

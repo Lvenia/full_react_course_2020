@@ -1,21 +1,45 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-const Hello = () => <h1>Hello World!</h1> //stateless functional component, implicit return
+const FinnRecommendations = () => {
+    return (
+        <section>
+            <Recommendation/>
+            <Recommendation/>
+            <Recommendation/>
+            <Recommendation/>
+            <Recommendation/>
+            <Recommendation/>
+        </section>
+    )
+}
 
-//stateless functional component, explicit return
+const Recommendation = () => {
+    return (
+        <article>
+            <Image/>
+            <Description/>
+        </article>
+    )
+}
+
+const Image = () => {
+    return <img src={'https://images.finncdn.no/dynamic/480w/logo/result/-3002/iad_1359802226105336855finn-logo-hovedlogo-rgb-ikketransp.png'} alt={'finn logo'}/>
+}
+
 const Description = () => {
-    return <p>This is the fist component.</p>
-};
-
-//Nested component structure
-const Greeting = () => {
     return (
         <>
-            <Hello/>
-            <Description/>
+            <div>
+                Oslo
+                <button>&#8230;</button>
+            </div>
+            <h3>FINN.no is looking for Software Developers</h3>
+            <div>
+                FIND
+            </div>
         </>
     )
-};
+}
 
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+ReactDom.render(<FinnRecommendations/>, document.getElementById('root'));

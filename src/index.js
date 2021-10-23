@@ -6,7 +6,7 @@ import HeartIcon from './svgIcons/heart.svg';
 
 const FinnRecommendations = () => {
     return (
-        <section>
+        <section className={"recommendations"}>
             <Recommendation/>
             <Recommendation/>
             <Recommendation/>
@@ -19,7 +19,7 @@ const FinnRecommendations = () => {
 
 const Recommendation = () => {
     return (
-        <article>
+        <article className={"item"}>
             <Image/>
             <Description/>
         </article>
@@ -29,7 +29,10 @@ const Recommendation = () => {
 const Image = () => {
     return (
         <div className={"img-wrapper"}>
-            <img src={HeartIcon} className={"heart"}/>
+            <img
+                src={HeartIcon} className={"heart"}
+                alt={'add to favorite heart icon'}
+            />
             <img
                 className={"main-img"}
                 src={'https://images.finncdn.no/dynamic/480w/logo/result/-3002/iad_1359802226105336855finn-logo-hovedlogo-rgb-ikketransp.png'}
@@ -44,7 +47,11 @@ const Description = () => {
         <>
             <div className={"description"}>
                 Oslo
-                <img src={DotsIcon} className={"icon"}/>
+                <img
+                    className={"icon"}
+                    src={DotsIcon}
+                    alt={'see more button'}
+                />
             </div>
             <h3>FINN.no is looking for Software Developers</h3>
             <div className={"description"}>FIND</div>
